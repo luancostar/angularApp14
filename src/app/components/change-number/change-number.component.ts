@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import {  } from 'stream';
 
 @Component({
   selector: 'app-change-number',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './change-number.component.css'
 })
 export class ChangeNumberComponent {
+ 
+ @Output() changeNumber: EventEmitter<any> = new EventEmitter()
+
+  handleClick() {
+    this.changeNumber.emit();
+  }
 
 }
