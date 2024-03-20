@@ -1,20 +1,16 @@
-import { Component } from '@angular/core';
-import { NgStyle } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-first-component',
-  standalone: true,
-  imports: [NgStyle],
   templateUrl: './first-component.component.html',
-  styleUrl: './first-component.component.css'
+  styleUrls: ['./first-component.component.css'],
 })
-export class FirstComponentComponent {
-  name: string = 'Luan';
-  age: number = 30;
-  job: string = 'Programador';
-  hobbies = ["corres", "jogar", "estudar"];
+export class FirstComponentComponent implements OnInit {
+  name = 'Matheus';
+  age = 30;
+  job = 'Programmer';
 
-  size = 40;
-  font = 'Arial'
-  color = '#984953'
+  constructor() {}
+
+  ngOnInit(): void {}
 }
