@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Animal } from 'src/app/Animal';
-
+import { ActivatedRoute } from '@angular/router';
 import { ListService } from 'src/app/services/list.service';
 
 @Component({
@@ -27,8 +27,8 @@ export class ListRenderComponent implements OnInit {
   }
 
   removeAnimal(animal: Animal) {
-    console.log('Removendo animal...');
-    this.animals = this.listService.remove(this.animals, animal);
+   this.animals = this.animals.filter((a) => animal.name !== a.name);
+   this.listService.remove(animal.id).subscribe();
   }
 
   getAnimals(): void {
